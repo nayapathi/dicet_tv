@@ -12,13 +12,10 @@
   <properties>
     <!--Versions 3.1.1.RELEASE or higher are supported-->
     <org.springframework.version>3.1.1.RELEASE</org.springframework.version>
-    <sonar.host.url>http://172.31.43.169:9000</sonar.host.url>
-    <sonar.login>admin</sonar.login>
-    <sonar.password>sonarqube</sonar.password>
-    <sonar.java.binaries>${project.build.directory}/classes</sonar.java.binaries>
   </properties>
 
   <dependencies>
+
     <dependency>
       <groupId>pl.bristleback</groupId>
       <artifactId>bristleback-core</artifactId>
@@ -44,12 +41,14 @@
       <artifactId>spring-webmvc</artifactId>
       <version>${org.springframework.version}</version>
     </dependency>
+
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
       <version>3.8.1</version>
       <scope>test</scope>
     </dependency>
+
   </dependencies>
 
   <build>
@@ -66,19 +65,14 @@
           </configuration>
         </plugin>
         <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
-          <artifactId>maven-war-plugin</artifactId>
-          <version>3.3.1</version>
-        </plugin>
+    <groupId>org.apache.maven.plugins</groupId>
+    <artifactId>maven-war-plugin</artifactId>
+    <version>3.3.1</version>
+</plugin>
         <plugin>
           <groupId>org.mortbay.jetty</groupId>
           <artifactId>jetty-maven-plugin</artifactId>
           <version>8.1.10.v20130312</version>
-        </plugin>
-        <plugin>
-          <groupId>org.sonarsource.scanner.maven</groupId>
-          <artifactId>sonar-maven-plugin</artifactId>
-          <version>4.0.0.4121</version>
         </plugin>
       </plugins>
     </pluginManagement>
